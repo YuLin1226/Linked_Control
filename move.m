@@ -16,5 +16,5 @@ function [new_pos] = move(v,w,pos,dt,num)
     plot(new_x, new_y, color, 'MarkerSize',10);
     plot([new_x, new_x+ 0.03*cos(new_theta)], [new_y,  new_y + 0.03*sin(new_theta)], dir);
     new_pos = [new_x ; new_y ; new_theta];
-    axis([0,20,0,20]);
+    axis([10,15,8,13]);
 end
