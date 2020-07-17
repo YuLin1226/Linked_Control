@@ -1,0 +1,16 @@
+function [pos_set] = Path_Planner(v, w, x, y, heading, dt)
+    pre_step = 9;
+    pos_set = [];
+    for i = 1 : length(v)
+        new_pos = [x, y, heading];
+        for j = 1 : length(w)
+            for k = 1:pre_step
+                new_x = new_pos(1, k) + v(i)*cos(heading)*dt;
+                new_y = new_pos(1, k) + v(i)*sin(heading)*dt;
+                new_heading = new_pos(1, k) + w(j)*dt;
+                new_pos = [new_pos; new_x, new_y, new_heading];
+            end
+        end
+        pos_set = [pos_set, new_pos];
+    end
+end
